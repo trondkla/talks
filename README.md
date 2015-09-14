@@ -1,4 +1,7 @@
-# talks
-All my talks can be found here in different branches
+# HTML5 og WAI-ARIA - Universal Utforming
 
-Here in the master branch you may find commenly used frameworks, like remark
+
+
+Gjør jobben enklere for skjermlesere, for svaksynte, men like viktig mer oversiktlig sider da man kutter det som er unødvendig.
+
+Koden blir også enklere å forstå.

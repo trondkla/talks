@@ -1,0 +1,11 @@
+.reveal img.logo {
+  border: 0px none;
+  background: none;
+  margin-bottom: 1.5em;
+}
+.reveal .small {
+  font-size: 0.5em;
+}
+.reveal img {
+  max-height: 650px;
+}
