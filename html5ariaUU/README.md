@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # HTML5 og WAI-ARIA - Universal Utforming
 
 HTML 5 intor først
@@ -52,9 +51,3 @@ Hvilken kode er mest forstårlig når du graver i gammel kode?
 </section>
 
 "Again citing Wikipedia, 2.6% of the world's population is visually impaired. If we are willing to make changes and accommodate the 2% of people visiting our site through IE 5.0, we should be willing to help out the 2.6% visiting through a screen reader."
-=======
-# talks
-All my talks can be found here in different branches
-
-Here in the master branch you may find commenly used frameworks, like remark
->>>>>>> master
