@@ -17,5 +17,8 @@
     "gulp-livereload": "~0.1.1",
     "gulp-sass": "~0.2.2",
     "tiny-lr": "0.0.5"
+  },
+  "dependencies": {
+    "reveal": "0.0.4"
   }
 }
