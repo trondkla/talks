@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Magic mirror</title>
+
+        <link rel="stylesheet" href="./css/reveal.min.css">
+        <link rel="stylesheet" href="./css/bekk.css">
+        <link rel="stylesheet" href="./css/style.css">
+
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <div class="slides">
+
+                <section>
+                  <h2><i>Magic</i> | mirror</h2>
+                  <br />
+                  <br />
+                  <br />
+
+                  <p>Trond Klakken | <a href="http://twitter.com/trondkla">@trondkla</a></p>
+                  <p><a href="http://open.bekk.no">open.bekk.no</a></p>
+                </section>
+
+                <section>
+                  <div class="bus-and-runner">
+                    <img src="images/runner.png" class="runner no-border" />
+                    <img src="images/bus.svg" class="bus no-border" />
+                  </div>
+                  <aside class="notes">
+                    <ul>
+                      <li>Går gjerne 1 min for tidlig</li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section>
+                  <img class="no-border" src="images/lightbulb.png" />
+                  
+                  <aside class="notes">
+                    <ul>
+                      <li>Tri sitt API har sanntidsdato.</li>
+                      <li>Putte olip en skjerm i gangen?</li>
+                      <li>Men det er ikke så fint</li>
+                      <li>Skjule inni ett speil!</li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section>
+                  <img class="no-border woman-mirror" src="images/woman_hand_mirror.svg" />
+
+                  <p><i>Mirror, mirror on the wall, <br /> when's the next bus?!</i></p>
+                  
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                 <section data-background="images/tumblr_n4oop9y0981sha68ro1_1280.jpg">
+                  <h3 class="bottom">http://michaelteeuw.nl/tagged/magicmirror</h3>
+                  <aside class="notes">
+                    <ul>
+                      <li>Insperasjon</li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/fysikken.gif">
+                  <aside class="notes">
+                    <ul>
+                      <li>Fungerer bare med mørke på ene siden</li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section>
+                  <div class="screens hvit-rund-bakgrunn">
+                    <img class="no-border small screen" src="images/skjerm.jpg" />
+                    <img class="no-border big screen" src="images/big-tv.jpg" />
+                  </div>
+
+                  <aside class="notes">
+                    <ul>
+                      <li>Størrelse?</li>
+                      <li>Gangen begrenser</li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section>
+                  <img class="round-corners pi" src="images/raspberry_pi.jpg" />
+                  <img class="round-corners behind screen fragment" src="images/skjerm_bak.jpg" />
+                  <img class="round-corners wifi fragment" src="images/wifi.jpg" />
+                  <img class="round-corners power fragment" src="images/power.jpg" />
+                  <img class="round-corners sd fragment" src="images/sd.jpg" />
+                  <img class="round-corners hdmi fragment" src="images/hdmi.jpg" />
+
+                  <aside class="notes">
+                    <ul>
+                      <li>Størrelse?</li>
+                      <li>Gangen begrenser</li>
+                      <li>Bare å sette igang... bestilling</li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section>
+                  <img class="round-corners big screen" src="images/big-tv.jpg" />
+
+                  <aside class="notes">
+                    <ul>
+                      <li>og... en skjerm for debugging</li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section>
+                  <img src="images/ebay.png" />
+
+                  <aside class="notes">
+                    <ul>
+                      <li>Bare å bestille.... og vente</li>
+                      <li>Første ble sendt etter 6 uker, men kom aldri fram</li>
+                      <li>7 mnd etterpå sitter jeg med 2. bestilte</li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section>
+                  <img src="images/installing.png" />
+
+                  <aside class="notes">
+                    <ul>
+                      <li>Bli vant til denne...</li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/46.jpg">
+
+                  <aside class="notes">
+                    <ul>
+                      <li>5 linux installasjoner, før jeg finner ut at SD kortet er korrupt. Ca time hver (treg raspberry pi)</li>
+                      <li>Får endelig opp linux, aner ikke hvilken driver, standard gir ikke skjermen liv</li>
+                      <li>Sender mail, får svar! Får driver image på 2 GB, laster ned i 4 kbps.</li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/48.jpg">
+
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section>
+
+                  <code>Let the coding commence</code><code  class="fragment"><span> soon...</span></code>
+
+                  <aside class="notes">
+                    <ul>
+                      <li>Kunne vært dag med talk</li>
+                      <li>Over 40 timer med bash scripts og rebooting</li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section>
+
+                  <div class="hvit-rund-bakgrunn">
+                    <img class="no-border small screen" src="images/imac.png" />
+                    <img class="no-border arrow" src="images/fi-arrow-right.svg" />
+                    <img class="no-border server small screen" src="images/server.png" />
+                    <img class="no-border arrow" src="images/fi-arrow-right.svg" />
+                    <img class="no-border small screen" src="images/wireless-router.svg" />
+                    <img class="no-border small screen" src="images/red-x.png" />
+                    <img class="no-border small screen" src="images/raspberry.png" />
+
+                  </div>
+
+
+                  <aside class="notes">
+                    <ul>
+                      <li>Pi for treg, måtte bygges på server</li>
+                      <li>Pi er innenfor hjemmenettverk, vil ikke åpne, sikkerhet</li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section>
+
+                  <div class="hvit-rund-bakgrunn">
+                    <img class="no-border small screen" src="images/raspberry.png" />
+
+                    <img class="no-border arrow" src="images/fi-arrow-right.svg" />
+                    <img class="no-border server small screen" src="images/server.png" />
+                  </div>
+                  <br />
+                  <h2><i>Got zip for me?</i></h2>
+
+
+                  <aside class="notes">
+                    <ul>
+                      <li>Pi må dermed pull'e</li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section>
+
+                  <img src="images/github.png" />
+
+                  <aside class="notes">
+                    <ul>
+                      <li>Alltid bruk git... klarte å slette filene først</li>
+                      <li>Masse scripting</li>
+                    </ul>
+                  </aside>
+                </section>
+
+
+                <section>
+
+                  <div class="hvit-rund-bakgrunn">
+                    <img class="no-border" src="images/omniscient.png" />
+                    <img class="no-border" src="images/react.png" />
+                  </div>
+
+                  <aside class="notes">
+                    <ul>
+                      <li>Lære meg omniscient...</li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/20.jpg">
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+
+                <section data-background="images/01.jpg">
+                  <aside class="notes">
+                    <ul>
+                      <li>Voila!</li>
+                      <li>Ok, vi har noe som fungerer... speil!</li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/02.jpg">
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/03.jpg">
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/04.jpg">
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/05.jpg">
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/06.jpg">
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/07.jpg">
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/08.jpg">
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/09.jpg" data-autoslide="1000">
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/10.jpg" data-autoslide="1000">
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/11.jpg" data-autoslide="1000">
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/12.jpg" data-autoslide="1000">
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/13.jpg" data-autoslide="1000">
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/14.jpg" data-autoslide="1000">
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/15.jpg" data-autoslide="1000">
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/16.jpg">
+                  <aside class="notes">
+                    <ul>
+                      <li>Kutte kutte</li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/17.jpg">
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/18.jpg">
+                  <h2>Close... but no sigar</h2>
+                  <aside class="notes">
+                    <ul>
+                      <li>Close... but no sigar</li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/19.jpg">
+                  <h2>For mye lys på baksiden</h2>
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/21.jpg">
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/22.jpg">
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/23.jpg">
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/24.jpg">
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/25.jpg">
+                  <aside class="notes">
+                    <ul>
+                      <li>Finne hullet i forhold til kantene</li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/26.jpg">
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/27.jpg">
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/28.jpg">
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/29.jpg">
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/30.jpg">
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/31.jpg">
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/32.jpg">
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/33.jpg">
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/34.jpg">
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/35.jpg">
+                  <aside class="notes">
+                    <ul>
+                      <li>Tom for teip... planlegging</li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/36.jpg">
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/37.jpg">
+                  <aside class="notes">
+                    <ul>
+                      <li>Enkle er ofte det beste...</li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/38.jpg">
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/39.jpg">
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/41.jpg">
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/44.jpg">
+                  <aside class="notes">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section data-background="images/45.jpg">
+                  <aside class="notes">
+                    <ul>
+                      <li>Uansett hvor mye man planlegger, glemmer man noe</li>
+                      <li>Litt for lavt..</li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section>
+                  <h2>Summa summarum</h2>
+
+                  <ul>
+                    <li class="fragment">Raspberry pi er lavnivå</li>
+                    <li class="fragment">Mye å automatisere</li>
+                    <li class="fragment">Vanskelig å debugge</li>
+                    <li class="fragment">Tålmodighet</li>
+                  </ul>
+
+                  <aside class="notes">
+                    <ul>
+                      <li>Raspberry pi er lavnivå</li>
+                      <li>Mye å automatisere, flere hinder</li>
+                      <li>Tryner chrome kan man ikke bruke web-inspector, ssh og RDP!</li>
+                      <li>Brukt over 100 timer hittil</li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section>
+                  <a href="https://github.com/trondkla/info-pi"></a>
+                  <a href="https://github.com/trondkla/info-pi-client"></a>
+
+                  <aside class="notes">
+                    <ul>
+                      <li>Takk for meg</li>
+                      <li>Neste prosjekt....</li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section>
+                  <iframe src="http://tvguidn.com/pakketrekker" width="800" height="650"></iframe>
+                </section>
+            </div>
+
+        </div>
+
+        <script src="./lib/js/head.min.js"></script>
+        <script src="./js/reveal.min.js"></script>
+        <script type="text/javascript" src="./vendor/prefixfree.min.js"></script>
+
+        <script>
+
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+                transition: 'fade', //Default - None - Fade - Slide - Concave - Zoom
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; }},
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+        </script>
+    </body>
+</html>

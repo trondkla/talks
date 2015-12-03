@@ -1,0 +1,73 @@
+.reveal img.logo {
+  border: 0px none;
+  background: none;
+  margin-bottom: 1.5em;
+}
+.reveal .small {
+  font-size: 0.5em;
+}
+.reveal img {
+  max-height: 650px;
+}
+.reveal img.no-border {
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+.runner {
+  width: 4.2em;
+}
+.bus {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+  width: 20em;
+}
+.runner,
+.bus {
+  display: inline-block;
+}
+.bus-and-runner {
+  font-size: 20px;
+  width: 30em;
+}
+.woman-mirror {
+  color: white;
+}
+.hvit-rund-bakgrunn {
+  background: white;
+  border-radius: 1em;
+}
+.big.screen {
+  width: 20em;
+}
+.small.screen {
+  width: 15em;
+}
+.behind.screen,
+.wifi,
+.pi {
+  width: 10em;
+}
+.power,
+.sd,
+.hdmi {
+  width: 8em;
+}
+.reveal section img.server {
+  margin-bottom: -3em;
+}
+.round-corners {
+  border-radius: 10px;
+}
+.reveal section img.arrow {
+  width: 3em;
+  padding-bottom: 1.5em;
+}
+.bottom {
+  position: absolute;
+  top: 6em;
+}
