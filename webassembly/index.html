@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>WebAssembly</title>
+
+        <link rel="stylesheet" href="./css/reveal.min.css">
+        <link rel="stylesheet" href="./lib/css/zenburn.css">
+        <link rel="stylesheet" href="./css/bekk.css">
+        <link rel="stylesheet" href="./css/style.css">
+
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <div class="slides">
+
+                <section data-background="white">
+                  <img src="images/webassembly_logo.svg" class="no-border no-background" />
+
+                  <aside class="notes">
+                    <ul>
+                      <li>Mitt navn, Trondheim</li>
+                      <li>Hørt om WASM?</li>
+                      <li>Prøvd?</li>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section>
+                  <p class="quote">
+                    <p style="padding-bottom: 0.8em;"><b style="font-size: 2em;">WebAssembly</b> or <i style="font-size: 1.2em;">wasm</i> </p>
+                    <p> is a <span class="fragment">new</span></p>
+                    <p  class="fragment" style="font-size: 1.5em; padding-bottom: 0.5em;"><i>portable</i>,</p>
+                    <p  class="fragment" style="padding-bottom: 0.8em;"><strong>size-</strong> and <strong>load-time-efficient <i style="font-size: 1.1em;">format</i></strong></p>
+                    <p class="fragment" style="font-size: 1.2em;">suitable for compilation to the <span style="font-size: 1.1em">web</span>.</p>
+                  </p>
+                  <aside class="notes">
+                    <ul>
+                      <li>new - annonsert 2015</li>
+                      <li>protable -> Trenger nettleser</li>
+                      <li>WASM binary encoded</li>
+                      <li></li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <!-- ASM -->
+                <section>
+                  <section>
+                    <p style="float: left">"Så, </p>
+                    <p style="font-size: 3em">asm.js?"</p>
+
+                    <aside class="notes">
+                      <ul>
+                        <li>Mja, asm.js brukes som intermediate</li>
+                      </ul>
+                    </aside>
+                  </section>
+
+                  <section>
+
+<div class="flex">
+<pre class="bigcode">
+<code class="hljs c">
+int f(int i) {
+  return i + 1;
+}
+</code>
+C
+</pre>
+<p class="arrow">emscripten oversetter</p>
+<pre class="bigcode">
+<code class="hljs javascript">
+function f(i) {
+  i = i|0;
+  return (i + 1)|0;
+}
+</code>
+asm.js
+</pre>
+</div>
+        <aside class="notes">
+          <ul>
+            <li>+ raskere kode, subset</li>
+            <li>andre språk på web</li>
+            <li>mer manuell minnehåndtering</li>
+            <li>raskere enn JS pga ingen typesjekk eller garbage collection</li>
+            <li>tekst, fortsatt ikke binær</li>
+            <li>mer verbost</li>
+          </ul>
+        </aside>
+                  </section>
+
+                  <section>
+
+<div class="flex">
+<pre class="bigcode semibig">
+<code class="hljs c">
+int factorial(int n) {
+  if (n == 0)
+    return 1;
+  else
+    return n * factorial(n-1);
+}
+</code>
+C
+</pre>
+<p class="arrow">emscripten oversetter</p>
+<pre class="bigcode semibig">
+<code class="hljs xml">
+20 00 | get_local 0
+50    | i64.eqz
+04 7e | if i64
+42 01 |    i64.const 1
+05    | else
+20 00 |    get_local 0
+20 00 |    get_local 0
+42 01 |    i64.const 1
+7d    |    i64.sub
+10 00 |    call 0
+7e    |    i64.mul
+0b    | end
+</code>
+  WASM  | Intermedia representation
+</pre>
+</div>
+<p class="kilde">Kilde wikipedia</p>
+                    <aside class="notes">
+                      <ul>
+                        <li>WASM - stackmaskin</li>
+                      </ul>
+                    </aside>
+                  </section>
+
+                </section>
+
+                <!--
+                Hva er web assembly?
+                Hvordan vil det fungere?
+                Hvordan bruke det i dag?
+                Hva er det ikke?
+                Framtiden
+                DEMO
+                //-->
+
+                <section>
+                  <section>
+                    <h2>Pros</h2>
+                  </section>
+
+                  <section>
+                    <h2>Ditt språk, overalt</h2>
+                    <aside class="notes">
+                      <ul>
+                        <li>Web and non-web platforms</li>
+                        <li>Legg til ditt språk i LLVM (Low Level Virtual Machine) / Clang</li>
+                        <li>Samling med modulære og gjenbrukbare kompilatorer og toolchains</li>
+                      </ul>
+                    </aside>
+                  </section>
+
+                  <section>
+                    <h2>Ingen plugins</h2>
+                    <aside class="notes">
+                      <ul>
+                        <li>Alt du trenger ligger i wasm</li>
+                        <li>Bibloteker</li>
+                      </ul>
+                    </aside>
+                  </section>
+
+                  <section>
+                    <h2>Full kontroll</h2>
+                    <aside class="notes">
+                      <ul>
+                        <li>Shared Memory Array buffers</li>
+                        <li>Kontroll over garbage collection</li>
+                        <li>Parallellisering</li>
+                        <li>SIMD</li>
+                      </ul>
+                    </aside>
+                  </section>
+
+                  <section>
+                    <img src="images/joystick.svg" class="no-border no-background" />
+                    <a target="_blank" href="http://webassembly.org/demo/Tanks/">http://webassembly.org/demo/Tanks/</a>
+                    <p class="kilde">Kilde: www.onlinewebfonts.com</p>
+                    <aside class="notes">
+                      <ul>
+                        <li>Porting</li>
+                        <li>Alle devicer, også mobil</li>
+                        <li>Alle devicer</li>
+                      </ul>
+                    </aside>
+                  </section>
+
+                  <section>
+                    <h2>Video og audio redigering rett i browser</h2>
+                    <a target="_blank" href="https://d2jta7o2zej4pf.cloudfront.net/">https://d2jta7o2zej4pf.cloudfront.net/</a>
+                    <aside class="notes">
+                      <ul>
+                        <li>Ghost</li>
+                        <li>JS raskere siden kommunikasjon er treg</li>
+                        <li>mye overhead med mange små kall</li>
+                      </ul>
+                    </aside>
+                  </section>
+
+                  <section>
+                    <!-- can i use -->
+                    <img src="images/caniuse.png" class="no-border no-background" />
+                    <p class="kilde">Kilde: caniuse.com</p>
+                  </section>
+
+                <!-- end pros -->
+                </section>
+
+                <section>
+                  <section>
+                    <h2>Cons</h2>
+                  </section>
+
+                  <section>
+                    <h2>NO DEBUGGING... yet</h2>
+                    <aside class="notes">
+                      <ul>
+                        <li>Ingen breakpoints</li>
+                        <li>Inspiser kode: "Native code"</li>
+                      </ul>
+                    </aside>
+                  </section>
+
+                  <section>
+                    <h2>Alt er med... ALT</h2>
+                    <aside class="notes">
+                      <ul>
+                        <li>Hele C runtime, string bibloteker, alle biblotekene</li>
+                        <li>Likevel, ikke større enn react.js</li>
+                      </ul>
+                    </aside>
+                  </section>
+
+                  <section>
+                    <h2>Eldre kode må fortsatt portes</h2>
+                    <aside class="notes">
+                      <ul>
+                        <li>Ingen automatikk</li>
+                        <li>Wolfenstein 3D... 10 timer</li>
+                      </ul>
+                    </aside>
+                  </section>
+
+                  <section>
+                    <h2>Ingen errorhandling</h2>
+                    <aside class="notes">
+                      <ul>
+                        <li>Alt må trappes i javascript</li>
+                        <li>Lite feilmeldinger</li>
+                      </ul>
+                    </aside>
+                  </section>
+
+                  <section>
+                    <h2>Snakker i hovedsak strenger</h2>
+                    <aside class="notes">
+                      <ul>
+                        <li>Kommuikasjon mellom JS og wasm strenger</li>
+                        <li>Minst mulig kommunikasjon</li>
+                      </ul>
+                    </aside>
+                  </section>
+
+
+                  <section>
+                    <h2>APIer fortsatt i Draft hos W3C</h2>
+                    <aside class="notes">
+                      <ul>
+                        <li></li>
+                      </ul>
+                    </aside>
+                  </section>
+
+                </section>
+
+                <section>
+                  <h2>Mer lesestoff!</h2>
+
+                  <ul>
+                    <li>https://wasdk.github.io/WasmFiddle/</li>
+                    <li>https://mbebenita.github.io/WasmExplorer/</li>
+                    <li>http://webassembly.org/</li>
+                    <li>https://blog.openbloc.fr/webassembly-first-steps/</li>
+                  </ul>
+                  <p>Takk for meg!</p>
+                </section>
+            </div>
+
+        </div>
+
+        <script src="./lib/js/head.min.js"></script>
+        <script src="./js/reveal.min.js"></script>
+        <script type="text/javascript" src="./vendor/prefixfree.min.js"></script>
+
+        <script>
+
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+                transition: 'Slide', //Default - None - Fade - Slide - Concave - Zoom
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; }},
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+        </script>
+    </body>
+</html>

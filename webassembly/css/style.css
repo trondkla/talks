@@ -1,0 +1,71 @@
+.reveal img.logo {
+  border: 0px none;
+  background: none;
+  margin-bottom: 1.5em;
+}
+.reveal .small {
+  font-size: 0.5em;
+}
+.reveal ul.no-style {
+  list-style: none;
+}
+.reveal img {
+  max-height: 650px;
+}
+.reveal .no-border {
+  border: 0px none;
+  outline: none;
+  box-shadow: none;
+}
+.reveal img.background {
+  background: white;
+}
+.reveal img.no-background {
+  background: inherit;
+}
+.reveal img.padding {
+  padding: 1em;
+}
+.reveal img.htmlPic {
+  margin: -1em;
+}
+.reveal img.width-60 {
+  width: 60%;
+}
+.reveal .kilde {
+  font-size: 60%;
+  margin-top: 2em;
+}
+.reveal code {
+  text-align: left;
+  padding: 1em;
+}
+.reveal .bigcode {
+  font-size: 1.5em;
+  margin: 1em;
+  border: 0px none;
+  outline: none;
+  box-shadow: none;
+  max-height: auto;
+}
+.reveal .bigcode code {
+  padding: 0.5em 1em;
+  background: #654ff0;
+}
+.reveal .bigcode.semibig {
+  font-size: 0.8em;
+}
+.reveal .kilde {
+  font-size: 0.5em;
+}
+.reveal .flex {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.reveal .arrow {
+  display: inline-block;
+  font-size: 1.5em;
+  margin: 1em;
+}
