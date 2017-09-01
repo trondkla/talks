@@ -5,12 +5,11 @@
         <meta charset="utf-8">
 
         <title>WebAssembly</title>
-
+        <link rel="stylesheet" href="./css/font-awesome.css">
         <link rel="stylesheet" href="./css/reveal.min.css">
         <link rel="stylesheet" href="./lib/css/zenburn.css">
         <link rel="stylesheet" href="./css/bekk.css">
         <link rel="stylesheet" href="./css/style.css">
-
     </head>
 
     <body>
@@ -74,7 +73,10 @@ int f(int i) {
 </code>
 C
 </pre>
-<p class="arrow">emscripten oversetter</p>
+<div class="arrow-box">
+  <div class="emscripten">Emscripten</div>
+  <i class="fa fa-long-arrow-right arrow" aria-hidden="true"></i>
+</div>
 <pre class="bigcode">
 <code class="hljs javascript">
 function f(i) {
@@ -98,6 +100,39 @@ asm.js
                   </section>
 
                   <section>
+                    <div class="flex">
+                      <div class="box">C / C++ kildekode</div>
+                      <div class="arrow-box">
+                        <div class="emscripten">Emscripten</div>
+                        <i class="fa fa-long-arrow-right arrow" aria-hidden="true"></i>
+                      </div>
+                      <div class="">
+                        <div class="box">
+                          wasm modul
+                        </div>
+                        <div class="plus">
+                          +
+                        </div>
+                        <div class="box">
+                          <span>HTML dokument</span>
+                          <div class="box">
+                            JS "lim" kode
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <aside class="notes">
+                      <ul>
+                        <li>Emscripten bruker clang / LLVM, til AST</li>
+                        <li>lim er js kode fra emscripten for å aksesere dom og JS apier</li>
+                      </ul>
+                    </aside>
+                  </section>
+
+
+                  <section>
 
 <div class="flex">
 <pre class="bigcode semibig">
@@ -111,7 +146,10 @@ int factorial(int n) {
 </code>
 C
 </pre>
-<p class="arrow">emscripten oversetter</p>
+<div class="arrow-box">
+  <div class="emscripten">Emscripten</div>
+  <i class="fa fa-long-arrow-right arrow" aria-hidden="true"></i>
+</div>
 <pre class="bigcode semibig">
 <code class="hljs xml">
 20 00 | get_local 0
@@ -151,7 +189,7 @@ C
 
                 <section>
                   <section>
-                    <h2>Pros</h2>
+                    <h2>Hva har vi?</h2>
                   </section>
 
                   <section>
@@ -176,6 +214,16 @@ C
                   </section>
 
                   <section>
+                    <h2>Web APIer</h2>
+                    <aside class="notes">
+                      <ul>
+                        <li>(DOM, CSSOM, WebGL, IndexedDB, Web Audio API, etc.</li>
+                        <li></li>
+                      </ul>
+                    </aside>
+                  </section>
+
+                  <section>
                     <h2>Full kontroll</h2>
                     <aside class="notes">
                       <ul>
@@ -190,6 +238,7 @@ C
                   <section>
                     <img src="images/joystick.svg" class="no-border no-background" />
                     <a target="_blank" href="http://webassembly.org/demo/Tanks/">http://webassembly.org/demo/Tanks/</a>
+                    <a target="_blank" href="http://alex-wasm.appspot.com/mandel/hello.html">http://alex-wasm.appspot.com/mandel/hello.html</a>
                     <p class="kilde">Kilde: www.onlinewebfonts.com</p>
                     <aside class="notes">
                       <ul>
@@ -223,7 +272,7 @@ C
 
                 <section>
                   <section>
-                    <h2>Cons</h2>
+                    <h2>Hva mangler?</h2>
                   </section>
 
                   <section>
@@ -281,7 +330,24 @@ C
                     <h2>APIer fortsatt i Draft hos W3C</h2>
                     <aside class="notes">
                       <ul>
+                        <li>Skal kunne direkte</li>
+                        <li>Kan i dag kalles via JS</li>
+                        <li>Litt som C direkte i python</li>
+                      </ul>
+                    </aside>
+                  </section>
+
+                  <section>
+                    <h2>Framtiden</h2>
+                    <aside class="notes">
+                      <ul>
+                        <li>react.js backend byttes ut</li>
                         <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+
                       </ul>
                     </aside>
                   </section>
@@ -292,10 +358,12 @@ C
                   <h2>Mer lesestoff!</h2>
 
                   <ul>
-                    <li>https://wasdk.github.io/WasmFiddle/</li>
-                    <li>https://mbebenita.github.io/WasmExplorer/</li>
+                    <li>http://learningthreejs.com/blog/2013/04/30/closing-the-gap-between-html-and-webgl/</li>
                     <li>http://webassembly.org/</li>
                     <li>https://blog.openbloc.fr/webassembly-first-steps/</li>
+                    <li>https://wasdk.github.io/WasmFiddle/</li>
+                    <li>https://mbebenita.github.io/WasmExplorer/</li>
+                    <li><a href="https://www.youtube.com/watch?v=6v4E6oksar0">Compiling for the Web with WebAssembly (Google I/O '17)</a></li>
                   </ul>
                   <p>Takk for meg!</p>
                 </section>

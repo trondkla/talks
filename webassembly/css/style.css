@@ -64,6 +64,39 @@
   justify-content: space-around;
   align-items: center;
 }
+.reveal i {
+  font-family: 'FontAwesome';
+  font-style: normal;
+}
+.reveal .plus {
+  font-size: 2em;
+  margin: 0.5em;
+}
+.reveal .box {
+  border: 3px solid white;
+  padding: 1em 2em;
+  border-radius: 1em;
+}
+.reveal .box span {
+  display: inline-block;
+  margin-bottom: 1em;
+}
+.reveal .arrow-box {
+  justify-content: center;
+  margin: 3em;
+}
+.reveal .arrow-box .emscripten {
+  display: inline-block;
+}
+.reveal .arrow-box .arrow {
+  font-size: 5em;
+  display: inline-block;
+  margin: 0.1em;
+}
+.reveal .emscripten {
+  padding: 0.5em;
+  margin: 1em;
+}
 .reveal .arrow {
   display: inline-block;
   font-size: 1.5em;
