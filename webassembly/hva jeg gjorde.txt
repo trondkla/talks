@@ -1,8 +1,0 @@
-Installerte web assembly
-
-Lastet ned spill kildekode fra https://github.com/id-Software/wolf3d
-
-Lastet ned conio.h, som originalt hørte til Borland c++ kompilerer. Kode som fantes i MS-DOS for å tegne gui.
-"Simple Linux implementation of Borland's conio (conio.h) library. It uses Ncurses. It includes most functions required to write a basic application using conioh (i.e. getch(), cprintf(), puts() and more)."
-
-brew install ncurses
