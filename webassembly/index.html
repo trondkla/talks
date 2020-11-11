@@ -8,8 +8,13 @@
         <link rel="stylesheet" href="./css/font-awesome.css">
         <link rel="stylesheet" href="./css/reveal.min.css">
         <link rel="stylesheet" href="./lib/css/zenburn.css">
-        <link rel="stylesheet" href="./css/bekk.css">
+        <link rel="stylesheet" href="./css/bekk2.css">
         <link rel="stylesheet" href="./css/style.css">
+        <style>
+          * {
+            font-size: 2em;
+          }
+        </style>
     </head>
 
     <body>
@@ -33,16 +38,18 @@
 
                 <section>
                   <p class="quote">
-                    <p style="padding-bottom: 0.8em;"><b style="font-size: 2em;">WebAssembly</b> or <i style="font-size: 1.2em;">wasm</i> </p>
-                    <p> is a <span class="fragment">new</span></p>
-                    <p  class="fragment" style="font-size: 1.5em; padding-bottom: 0.5em;"><i>portable</i>,</p>
-                    <p  class="fragment" style="padding-bottom: 0.8em;"><strong>size-</strong> and <strong>load-time-efficient <i style="font-size: 1.1em;">format</i></strong></p>
-                    <p class="fragment" style="font-size: 1.2em;">suitable for compilation to the <span style="font-size: 1.1em">web</span>.</p>
+                    <p style="padding-bottom: 0.8em;"><b style="font-size: 2em;">WebAssembly</b> eller <i style="font-size: 1.2em;">wasm</i> </p>
+                    <p> er et <span class="fragment">relativt nytt</span></p>
+                    <p  class="fragment" style="font-size: 1.5em; padding-bottom: 0.5em;"><i>portabelt</i>,</p>
+                    <p  class="fragment" style="font-size: 1.5em; padding-bottom: 0.5em;"><i>sikkert</i>,</p>
+                    <p  class="fragment" style="padding-bottom: 0.8em;"><strong>størrelse-</strong> og <strong>last-tid-effektivt <i style="font-size: 1.1em;">format</i></strong></p>
+                    <p class="fragment" style="font-size: 1.2em;">passende for kompileringer til <span style="font-size: 1.1em">web</span>.</p>
                   </p>
                   <aside class="notes">
                     <ul>
-                      <li>new - annonsert 2015</li>
+                      <li>Relativt nytt - annonsert 2015</li>
                       <li>protable -> Trenger nettleser</li>
+                      <li>sanboxet som sikrer minne fra andre applikasjoner</li>
                       <li>WASM binary encoded</li>
                       <li></li>
                     </ul>
@@ -52,17 +59,18 @@
                 <!-- ASM -->
                 <section>
                   <section>
-                    <p style="float: left">"Så, </p>
-                    <p style="font-size: 3em">asm.js?"</p>
-
+                    <p style="float: left; font-size: 3em">"Assembly?</p>
+                    <p style="float: left; font-size: 3em">Skal vi tilbake til urtiden, eller?"</p>
                     <aside class="notes">
                       <ul>
                         <li>Mja, asm.js brukes som intermediate</li>
+                        <li>asm.js er et subsett av javascript, som man lettere kan representere som assembly instrukser</li>
+                        <li>Tenk .NET CLR eller Javas bytecode</li>
                       </ul>
                     </aside>
                   </section>
 
-                  <section>
+              <section>
 
 <div class="flex">
 <pre class="bigcode">
@@ -93,8 +101,9 @@ asm.js
             <li>andre språk på web</li>
             <li>mer manuell minnehåndtering</li>
             <li>raskere enn JS pga ingen typesjekk eller garbage collection</li>
-            <li>tekst, fortsatt ikke binær</li>
+            <li>men fortsatt tekst, ikke binær</li>
             <li>mer verbost</li>
+            <li>treg nedlasting og parsing</li>
           </ul>
         </aside>
                   </section>
@@ -172,6 +181,8 @@ C
                     <aside class="notes">
                       <ul>
                         <li>WASM - stackmaskin</li>
+                        <li>asm.js er et subsett av javascript, som man lettere kan representere som assembly instrukser</li>
+                        <li>Tenk .NET CLR eller Javas bytecode</li>
                       </ul>
                     </aside>
                   </section>
@@ -187,9 +198,37 @@ C
                 DEMO
                 //-->
 
+                
                 <section>
                   <section>
-                    <h2>Hva har vi?</h2>
+                    <h2>"Så hvorfor?"</h2>
+                  </section>
+
+                  <section>
+                    <img src="images/05-01-diagram_now01-768x198.png" class="no-border no-background" />
+                    <p>Javascript i dag</p>
+
+                    <aside class="notes">
+                      <ul>
+                        <li>Javascript har bare en kjerne</li>
+                        <li>Tekst må parses</li>
+                        <li>Lastes ned</li>
+                      </ul>
+                    </aside>
+                  </section>
+
+                  <section>
+                    <img src="images/05-03-diagram_future01.png" class="no-border no-background" />
+                    <p>WASM</p>
+
+                    <aside class="notes">
+                      <ul>
+                        <li>Webassembly ekte multitråd</li>
+                        <li>Ingen parsing parses</li>
+                        <li>Lastes ned mindre</li>
+                        <li>Portere eksisterende kode</li>
+                      </ul>
+                    </aside>
                   </section>
 
                   <section>
@@ -204,10 +243,10 @@ C
                   </section>
 
                   <section>
-                    <h2>Ingen plugins</h2>
+                    <h2>Ingen plugins, installasjon, appstores</h2>
                     <aside class="notes">
                       <ul>
-                        <li>Alt du trenger ligger i wasm</li>
+                        <li>Alt du trenger ligger i nettlesren</li>
                         <li>Bibloteker</li>
                       </ul>
                     </aside>
@@ -230,16 +269,51 @@ C
                         <li>Shared Memory Array buffers</li>
                         <li>Kontroll over garbage collection</li>
                         <li>Parallellisering</li>
-                        <li>SIMD</li>
+                        <li>SIMD (Single instruction, multiple data)</li>
                       </ul>
                     </aside>
                   </section>
 
                   <section>
-                    <img src="images/joystick.svg" class="no-border no-background" />
-                    <a target="_blank" href="http://webassembly.org/demo/Tanks/">http://webassembly.org/demo/Tanks/</a>
-                    <a target="_blank" href="http://alex-wasm.appspot.com/mandel/hello.html">http://alex-wasm.appspot.com/mandel/hello.html</a>
-                    <p class="kilde">Kilde: www.onlinewebfonts.com</p>
+                    <h2>Ytelse</h2>
+                    <aside class="notes">
+                      <ul>
+                        <li>Spesielt på mobil, opp til 90% fortere i Firefox på mobil</li>
+                        <li>Ikke raskere enn nativ app, men ikke lang ifra!</li>
+                        <li>Multi-tråd programmering med meldingshåndtering</li>
+                      </ul>
+                    </aside>
+                  </section>
+
+                  <section>
+                    <h2>Blazor bruker web assembly</h2>
+                    <aside class="notes">
+                      <ul>
+                        <li>c# -> </li>
+                        <li>Alle devicer, også mobil</li>
+                        <li>Alle devicer</li>
+                      </ul>
+                    </aside>
+                  </section>
+
+                  <section>
+                    <h2>Rust / C / C++ / hva enn du vil</h2>
+                    <aside class="notes">
+                      <ul>
+                        Kommer demo
+                      </ul>
+                    </aside>
+                  </section>
+
+                  <section>
+                    <ul>
+                      <li>
+                      </ul>
+                        <a target="_blank" href="https://wasm.continuation-labs.com/d3demo/">Doom 3 i nettleser</a>
+                      </li>
+                      <li>
+                        Unity kan eksportere til WASM
+                      </li>
                     <aside class="notes">
                       <ul>
                         <li>Porting</li>
@@ -276,11 +350,23 @@ C
                   </section>
 
                   <section>
-                    <h2>NO DEBUGGING... yet</h2>
+                    <h2>Tilgang på DOM</h2>
                     <aside class="notes">
                       <ul>
-                        <li>Ingen breakpoints</li>
-                        <li>Inspiser kode: "Native code"</li>
+                        <li>Bare main Javascript thread har tilgang</li>
+                        <li>Ikke helt det man ønsker?</li>
+                      </ul>
+                    </aside>
+                  </section>
+
+                  <section>
+                    <h2>Debugging ikke helt perfekt</h2>
+                    <aside class="notes">
+                      <ul>
+                        <li>Debugging in Chrome DevTools</li>
+                        <li>Kan debugge koden direkte som wassembly</li>
+                        <li>Trenger source maps for å se "skikkelig" kode</li>
+                        <li>Rust og Clang kompilatoren kan lage for deg</li>
                       </ul>
                     </aside>
                   </section>
@@ -306,11 +392,12 @@ C
                   </section>
 
                   <section>
-                    <h2>Ingen errorhandling</h2>
+                    <h2>Dårlig errorhandling</h2>
                     <aside class="notes">
                       <ul>
                         <li>Alt må trappes i javascript</li>
                         <li>Lite feilmeldinger</li>
+                        <li>try catch kan endre opp i javascript</li>
                       </ul>
                     </aside>
                   </section>
@@ -320,6 +407,7 @@ C
                     <aside class="notes">
                       <ul>
                         <li>Kommuikasjon mellom JS og wasm strenger</li>
+                        <li>serialisere og deserialisere ved kommunikasjon</li>
                         <li>Minst mulig kommunikasjon</li>
                       </ul>
                     </aside>
@@ -337,35 +425,16 @@ C
                     </aside>
                   </section>
 
-                  <section>
-                    <h2>Framtiden</h2>
-                    <aside class="notes">
-                      <ul>
-                        <li>react.js backend byttes ut</li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-
-                      </ul>
-                    </aside>
-                  </section>
-
                 </section>
 
                 <section>
-                  <h2>Mer lesestoff!</h2>
+                  <h2>Takk for meg!</h2>
 
+                  <p>Mer info</p>
                   <ul>
-                    <li>http://learningthreejs.com/blog/2013/04/30/closing-the-gap-between-html-and-webgl/</li>
                     <li>http://webassembly.org/</li>
-                    <li>https://blog.openbloc.fr/webassembly-first-steps/</li>
-                    <li>https://wasdk.github.io/WasmFiddle/</li>
-                    <li>https://mbebenita.github.io/WasmExplorer/</li>
-                    <li><a href="https://www.youtube.com/watch?v=6v4E6oksar0">Compiling for the Web with WebAssembly (Google I/O '17)</a></li>
+                    <li>https://madewithwebassembly.com/</li>
                   </ul>
-                  <p>Takk for meg!</p>
                 </section>
             </div>
 
@@ -382,7 +451,7 @@ C
                 progress: true,
                 history: true,
                 center: true,
-                transition: 'Slide', //Default - None - Fade - Slide - Concave - Zoom
+                transition: 'Concave', //Default - None - Fade - Slide - Concave - Zoom
                 dependencies: [
                     { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; }},
                     { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
